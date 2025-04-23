@@ -68,7 +68,7 @@ class regARMA(MeanModel):
             self._constraints = self._coreARMA.constr
             # getting our own constraints
             self._constraints = self._constraints + \
-                                [(-np.Inf, np.Inf) for i in range(len(self._regCols))]
+                                [(-np.inf, np.inf) for i in range(len(self._regCols))]
             
     #@profile        
     def condMean(self, params = None, data = None, other = None):

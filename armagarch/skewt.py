@@ -26,8 +26,8 @@ class skewt(DistModel):
     
     
     def _setConstraints(self, data=None):
-        self._constraints = {'Mean':[(-np.Inf, np.inf),], 'Var':[(0,np.inf),],\
-                             'other':[(3,np.Inf),(-0.9999,0.9999)]}
+        self._constraints = {'Mean':[(-np.inf, np.inf),], 'Var':[(0,np.inf),],\
+                             'other':[(3,np.inf),(-0.9999,0.9999)]}
     
     
     def lls(self, data = None, params = None):

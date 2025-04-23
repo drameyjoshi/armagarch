@@ -27,8 +27,8 @@ class tStudent(DistModel):
     
     
     def _setConstraints(self, data=None):
-        self._constraints = {'Mean':[(-np.Inf, np.inf),], 'Var':[(0,np.inf),],\
-                             'other':[(3,np.Inf),]}
+        self._constraints = {'Mean':[(-np.inf, np.inf),], 'Var':[(0,np.inf),],\
+                             'other':[(3,np.inf),]}
     
     
     def lls(self, data =None, params = None):

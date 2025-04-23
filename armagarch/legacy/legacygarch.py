@@ -84,13 +84,13 @@ class legacygarch(object):
         Likelihood function for Normal distribution
         """
         if np.any(ht<=0):
-            nlogLik = np.Inf
+            nlogLik = np.inf
         else:
             lls = np.log(2*np.pi) + np.log(ht) + (data)**2/ht
             nlogLik = 0.5*np.sum(lls)
     
         if np.isnan(nlogLik):
-            nlogLik = np.Inf
+            nlogLik = np.inf
             
         if out == False:
             return nlogLik
@@ -103,14 +103,14 @@ class legacygarch(object):
         Likelihood function for t-Student distribution
         """
         if np.any(ht<=0) or nu<=2:
-            nlogLik = np.Inf
+            nlogLik = np.inf
         else:             
             lls = np.log(gamma((nu+1)/2)/(np.sqrt(np.pi*(nu-2))*gamma(nu/2)))\
                 - 0.5*np.log(ht) - (nu+1)/2*np.log(1+data**2/(ht*(nu-2)))           
             nlogLik = np.sum(-lls)
         
         if np.isnan(nlogLik):
-            nlogLik = np.Inf
+            nlogLik = np.inf
         
         if out == False:
             return nlogLik
@@ -123,7 +123,7 @@ class legacygarch(object):
         Likelihood function for skew-t Distribution
         """
         if np.any(ht<=0) or nu<=2 or np.abs(l)>=1:
-            nlogLik = np.Inf
+            nlogLik = np.inf
         else:
             a = gamma((nu+1)/2)*np.sqrt(nu-2)*(l-1/l)
             a = a/(np.sqrt(np.pi)*gamma(nu/2))
@@ -139,7 +139,7 @@ class legacygarch(object):
             nlogLik = np.sum(-lls)
         
         if np.isnan(nlogLik):
-            nlogLik = np.Inf
+            nlogLik = np.inf
         
         if out == False:
             return nlogLik

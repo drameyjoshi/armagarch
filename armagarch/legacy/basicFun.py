@@ -22,13 +22,13 @@ def getLag(data, lag):
 
 def _normLik(self, data, mu, ht, out=False):
         if np.any(ht<=0):
-            nlogLik = np.Inf
+            nlogLik = np.inf
         else:
             lls = np.log(2*np.pi) + np.log(ht) + (data-mu)**2/ht
             nlogLik = 0.5*np.sum(lls)
     
         if np.isnan(nlogLik):
-            nlogLik = np.Inf
+            nlogLik = np.inf
             
         if out == False:
             return nlogLik

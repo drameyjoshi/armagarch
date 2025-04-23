@@ -75,9 +75,9 @@ class empModel(object):
         logLik = np.sum(lls)
         # stability precautions
         if np.isnan(logLik):
-            logLik = np.Inf
+            logLik = np.inf
         if np.any(vals['ht']<0):
-            logLik = np.Inf
+            logLik = np.inf
         #print(list(params) + [-np.sum(lls),])
         if out == True:
             return logLik, lls
