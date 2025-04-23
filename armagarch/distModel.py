@@ -35,7 +35,7 @@ class DistModel(object):
     
     
     def _setConstraints(self, data=None):
-        self._constraints = {'Mean':(-np.Inf, np.inf), 'Var':(0,np.inf),\
+        self._constraints = {'Mean':(-np.inf, np.inf), 'Var':(0,np.inf),\
                              'other':None}
     
     
