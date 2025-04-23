@@ -358,8 +358,8 @@ class multModel(object):
         J = J / T
         vcv = np.eye(len(parameters))
         try:
-            Jinv = np.mat(np.linalg.inv(J))
-            vcv = Jinv * np.mat(I) * Jinv / T
+            Jinv = np.asmatrix(np.linalg.inv(J))
+            vcv = Jinv * np.asmatrix(I) * Jinv / T
             vcv = np.asarray(vcv)
             return vcv
         except:

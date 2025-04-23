@@ -122,7 +122,7 @@ class dcc(VolModel): #TODO adjust garch dcc model. Think over the structure.
         Qprev = Qbar
         for ettemp in etlag:
             Qprev = np.kron(1 - alpha - beta, Qbar) + np.kron(alpha, \
-                                                              np.matrix(ettemp).T @ np.matrix(ettemp)) \
+                                                              np.asmatrixrix(ettemp).T @ np.asmatrixrix(ettemp)) \
                     + np.kron(beta, Qprev)
             Q.append(Qprev)
         return Q
@@ -141,7 +141,7 @@ class dcc(VolModel): #TODO adjust garch dcc model. Think over the structure.
         Qbar = et.cov().values
         ettemp = et.values.tolist()[-1]
         Q = np.kron(1 - alpha - beta, Qbar) + np.kron(alpha, \
-                                                      np.matrix(ettemp).T @ np.matrix(ettemp)) \
+                                                      np.asmatrixrix(ettemp).T @ np.asmatrixrix(ettemp)) \
             + np.kron(beta, Qprev)
         # get value for the correlation matrix
         Qstar = np.diag(np.sqrt(np.diag(Q)))

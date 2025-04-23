@@ -484,8 +484,8 @@ class legacygarch(object):
         J = hessian_2sided(self._garchll, parameters, args)
         J = J/T
         try:
-            Jinv = np.mat(np.linalg.inv(J))
-            vcv = Jinv*np.mat(I)*Jinv/T
+            Jinv = np.asmatrix(np.linalg.inv(J))
+            vcv = Jinv*np.asmatrix(I)*Jinv/T
             vcv = np.asarray(vcv)
         except:
             print('WARNING: Hessian is singular! St.errors are not calcualted')
